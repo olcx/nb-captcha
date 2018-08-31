@@ -1,0 +1,23 @@
+{
+    "name": "olcx/nb-captcha",
+    "description": "captcha package for nbframework",
+    "authors": [
+        {
+            "name": "Collin",
+            "email": "collin@nb.cx",
+            "homepage": "https://chenxiong.cx"
+        }
+    ],
+    "license": "Apache-2.0",
+    "require": {
+        "nbcx/framework": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "ol\\captcha\\": "src/"
+        },
+        "files": [
+            "src/helper.php"
+        ]
+    }
+}
