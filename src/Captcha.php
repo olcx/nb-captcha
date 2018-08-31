@@ -11,6 +11,7 @@
 
 namespace ol\captcha;
 
+use nb\Config;
 use nb\Session;
 
 class Captcha {
@@ -57,6 +58,9 @@ class Captcha {
      * @param  array $config 配置参数
      */
     public function __construct($config = []) {
+        if(!$config) {
+            $config = Config::$o->captcha?:[];
+        }
         $this->config = array_merge($this->config, $config);
     }
 

@@ -7,16 +7,29 @@
 
 ##使用
 
-###模板里输出验证码
+###在控制器里输出验证码
 
-~~~
-<div>{:captcha_img()}</div>
-~~~
-或者
-~~~
-<div><img src="{:captcha_src()}" alt="captcha" /></div>
-~~~
-> 上面两种的最终效果是一样的
+```
+public function index($id = "") {
+    $captcha = new Captcha([
+       // 验证码字符集合
+       'codeSet'  => '123456789',
+       // 验证码字体大小(px)
+       'fontSize' => 35,
+       // 是否画混淆曲线
+       'useCurve' => false,
+       // 验证码图片高度
+       'imageH'   => 80,
+       // 验证码图片宽度
+       'imageW'   => 320,
+       // 验证码位数
+       'length'   => 5,
+       // 验证成功后是否重置
+       'reset'    => true
+    ]);
+    $captcha->show($id);
+ }
+```
 
 ### 控制器里验证
 使用TP5的内置验证功能即可
